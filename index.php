@@ -1,3 +1,19 @@
+<?php
+// prendere il valore che e' stato inviato.
+// al primo caricamento non ha password_length, se non ce il valore usa ?? 0 
+$password_length = (int) $_GET['password-length'] ?? 0;  
+
+// per sapere se il form e' stato inviato
+$form_sent = !empty($_GET);
+// se il form e' stato inviato
+if($form_sent) {
+    // genero password
+    var_dump($password_length);
+    
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -20,7 +36,7 @@
                 <label for="password-length" class="form-label">
                     Lunghezza Password
                 </label>
-                <input type="number" class="form-control" name="password-length" id="password-length">
+                <input type="number" class="form-control" name="password-length" id="password-length" value="<?= $password_length?>">
             </div>
             <div class="col-2 d-flex align-items-end">
                 <button class="btn btn-success w-100">
