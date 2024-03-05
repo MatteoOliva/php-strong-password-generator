@@ -5,15 +5,15 @@ $password_length = isset($_GET['password-length']) ? (int) $_GET['password-lengt
 
 
 
-
-if($form_sent) {
+ // per sapere se il form e' stato inviato
+ $form_sent = !empty($_GET);
+ // se il form e' stato inviato
+ if($form_sent) {
 
     $generated_password = "";
-    
-    for() {
-        // per sapere se il form e' stato inviato
-    $form_sent = !empty($_GET);
-    // se il form e' stato inviato
+
+    for($i=0; $i < $password_length; $i++ ) {
+       
     // stingra di caratteri
     $all_chars = range('!', 'þ');
     
@@ -26,8 +26,9 @@ if($form_sent) {
     // aggiungo alla passoword i caratteri
     $generated_password .= $rand_char;
     // stampo password
-    var_dump($rand_char);
-    }
+};
+
+var_dump($generated_password);
     
 
 
