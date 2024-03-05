@@ -1,15 +1,36 @@
 <?php
 // prendere il valore che e' stato inviato.
-// al primo caricamento non ha password_length, se non ce il valore usa ?? 0 
-$password_length = (int) $_GET['password-length'] ?? 0;  
+// se ce trasformalo in intero e assegnalo altrimenti assegna un valore di default
+$password_length = isset($_GET['password-length']) ? (int) $_GET['password-length'] : 5;   
 
-// per sapere se il form e' stato inviato
-$form_sent = !empty($_GET);
-// se il form e' stato inviato
+
+
+
 if($form_sent) {
-    // genero password
-    var_dump($password_length);
+
+    $generated_password = "";
     
+    for() {
+        // per sapere se il form e' stato inviato
+    $form_sent = !empty($_GET);
+    // se il form e' stato inviato
+    // stingra di caratteri
+    $all_chars = range('!', 'þ');
+    
+    // indice casuale con range numero di caratteri nella stringa
+    $rand_char_index = rand(0, count($all_chars) - 1);
+    
+    // carattere randomico della stringa chars nella posizione dell'indice casuale
+    $rand_char = $all_chars[$rand_char_index];
+
+    // aggiungo alla passoword i caratteri
+    $generated_password .= $rand_char;
+    // stampo password
+    var_dump($rand_char);
+    }
+    
+
+
 }
 ?>
 
